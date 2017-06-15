@@ -2,20 +2,30 @@
 
 ## Changes I made
 
-### SQL Server Developer Edition instead of LocalDB
+### Azure SQL Server instead of LocalDB
 
-In file `appsettings.json` I use the following connection string to connect to my local SQL Server Database 2016 Developer Edition running on my laptop:
+In file `appsettings.json` I use the following connection string to connect to my Azure SQL Server Database:
+### Without Migrations
 ```json
 "ConnectionStrings": {
-    "DefaultConnection": "Server=.;Database=ContosoUniversity3;Trusted_Connection=True;MultipleActiveResultSets=true"
+    "DefaultConnection": "Server=tcp:fpmcontosouniversity.database.windows.net,1433;Initial Catalog=ContosoUniversity;Persist Security Info=False;User ID=DevAdmin;Password=Bulldog1$;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
+  }
+```
+### With Migrations
+
+```json
+"ConnectionStrings": {
+    "DefaultConnection": "Server=tcp:fpmcontosouniversity.database.windows.net,1433;Initial Catalog=ContosoUniversity2;Persist Security Info=False;User ID=DevAdmin;Password=Bulldog1$;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
   }
 ```
 
 ### Azure Web + SQL Sever
+In order to host both the ASP.Net Core Web and the SQL Database in Azure it performed the following steps.
 
 ### Azure Web Site + SQL Server Tempate
 I could not locate the Web Site + SQL Server template in the Azure Portal GUI.
 Instead, I had to paste the following into my browser:
+
 ```html
 https://portal.azure.com/#create/Microsoft.WebSiteSQLDatabase
 ```
