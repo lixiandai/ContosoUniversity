@@ -20,24 +20,33 @@ In file `appsettings.json` I use the following connection string to connect to m
 ```
 
 ### Azure Web + SQL Sever
-In order to host both the ASP.Net Core Web and the SQL Database in Azure it performed the following steps.
+In order to host both the ASP.Net Core Web and the SQL Database in Azure I performed the steps shown below.
 
-### Azure Web Site + SQL Server Tempate
-I could not locate the Web Site + SQL Server template in the Azure Portal GUI.
+### Create Azure Web Site + SQL Server
+I created a combination of Azure Web Site plus Azure SQL Server using a special template.
+
+However, I could not locate the Web Site + SQL Server template in the [Azure Portal GUI](http://portal.azure.com).
+
 Instead, I had to paste the following into my browser:
 
 ```html
 https://portal.azure.com/#create/Microsoft.WebSiteSQLDatabase
 ```
 
+I used the following to define the Azure web:
+
 fpmContosoUniversity.azurewebsites.net
 
+I used the following to define the Azure SQL Server:
 fpmcontosouniversity.database.windows.net
 Uid=DevAdmin
 Pwd=(normal)
 
 #### Azure SQL Database connection string
+
+```json
 Server=tcp:fpmcontosouniversity.database.windows.net,1433;Initial Catalog=ContosoUniversity;Persist Security Info=False;User ID={your_username};Password={your_password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
+```
 
 ## 1 of 10
 [Getting Started](https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/intro)
@@ -53,3 +62,10 @@ Server=tcp:fpmcontosouniversity.database.windows.net,1433;Initial Catalog=Contos
 
 ## 5 of 10
 [Creating a complex data model](https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/complex-data-model)
+
+Example of using PowerShell cmdlets intead of ef cmd prompt:
+
+```powershell
+Add-Migration ColumnFirstName -StartupProject ContosoUniversity -Verbose
+Update-Database
+```
