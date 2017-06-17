@@ -100,3 +100,18 @@ Update-Database -StartupProject $startProj
 
 ## 10 of 10
 [Advanced EF.Core Topics](https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/advanced)
+
+## Multiple Developers using EF.Core and Migrations
+https://msdn.microsoft.com/en-us/data/dn481501
+
+Take away:
+
+Add a blank `merge` migration
+
+The following process can be used for this approach, starting from the time you realize you have changes that need to be synced from source control.
+
+1. Ensure any pending model changes in your local code base have been written to a migration. This step ensures you don’t miss any legitimate changes when it comes time to generate the blank migration.
+2. Sync with source control.
+3. Run `Update-Database` to apply any new migrations that other developers have checked in. ** Note:****if you don’t get any warnings from the Update-Database command then there were no new migrations from other developers and there is no need to perform any further merging.
+4. Run `Add-Migration <pick_a_name> –IgnoreChanges` (e.g. `Add-Migration Merge-yyyy-mm-dd-hh-mm –IgnoreChanges`). This generates a migration with all the metadata (including a snapshot of the current model) but will ignore any changes it detects when comparing the current model to the snapshot in the last migrations (meaning you get a blank Up and Down method).
+5. Continue developing, or submit to source control (after running your unit tests of course).
