@@ -81,14 +81,22 @@ Server=tcp:fpmcontosouniversity.database.windows.net,1433;Initial Catalog=Contos
 Example of using PowerShell cmdlets intead of ef cmd prompt:
 
 ```powershell
-Add-Migration ColumnFirstName -StartupProject ContosoUniversity -Verbose
-Update-Database
+$startProj = 'ContosoUniversity'
+Add-Migration ColumnFirstName -StartupProject $startProj -Verbose
+Update-Database -StartupProject $startProj
 ```
 
 ## 6 of 10
-
 [Reading related data](https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/read-related-data)
 
 ## 7 of 10
-
 [Updating related data](https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/update-related-data)
+
+## 8 of 10
+[Handling concurrency conflicts](https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/concurrency)
+
+## 9 of 10
+[Inheritance](https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/inheritance)
+
+## 10 of 10
+[Advanced EF.Core Topics](https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/advanced)
