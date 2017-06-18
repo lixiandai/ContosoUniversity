@@ -1,5 +1,7 @@
 # Contoso University ASP.Net Core Tutorial
 
+## Download link to completed Tutorial
+https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-mvc/intro/samples/cu-final
 ## Changes I made
 
 ### Azure SQL Server instead of LocalDB

@@ -17,7 +17,7 @@ namespace ContosoUniversity.Controllers
 
         public InstructorsController(SchoolContext context)
         {
-            _context = context;    
+            _context = context;
         }
 
         // GET: Instructors
@@ -35,8 +35,8 @@ namespace ContosoUniversity.Controllers
             if (id != null)
             {
                 ViewData["InstructorID"] = id.Value;
-                Instructor instructor = viewModel.Instructors.Where(
-                    i => i.ID == id.Value).Single();
+                Instructor instructor = viewModel.Instructors
+                    .Where(i => i.ID == id.Value).Single();
                 viewModel.Courses = instructor.CourseAssignments.Select(s => s.Course);
             }
 
@@ -51,7 +51,6 @@ namespace ContosoUniversity.Controllers
                 }
                 viewModel.Enrollments = selectedCourse.Enrollments;
             }
-
             return View(viewModel);
         }
 
