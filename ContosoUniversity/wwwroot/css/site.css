@@ -41,15 +41,28 @@ textarea {
     background-color: royalblue;
 }
 
-.navbar-inverse .navbar-brand {
+    .navbar-inverse .navbar-brand {
+        color: white;
+    }
+
+/*.navbar-toggle > a {
+    color: yellow;
+}*/
+
+/*.navbar-inverse .navbar-nav > li > a {
+    color: white;
+}*/
+
+.navbar .brand, .navbar .nav > li > a {
     color: white;
 }
 
-.navbar-toggle > a {
-    color: white;
+    .navbar .brand, .navbar .nav > li > a:hover {
+        color: #F56E6E;
+    }
+
+.navbar .brand, .navbar .nav > li > a:hover {
+    color: yellow;
 }
 
-.navbar-inverse .navbar-nav > li > a {
-    color: white;
-}
 /* END - Navbar branding overrides */

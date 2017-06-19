@@ -92,12 +92,18 @@ Update-Database -StartupProject $startProj
 ## 6 of 10
 [Reading related data](https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/read-related-data)
 
-## 7 of 10 (in progress)
+## 7 of 10
 [Updating related data](https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/update-related-data)
-Add office location and courses to the Create page
 
-## 8 of 10
+## 8 of 10 (in progress)
 [Handling concurrency conflicts](https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/concurrency)
+
+Add a tracking property to the Department entity
+$startProj = 'ContosoUniversity'
+Add-Migration RowVersion -StartupProject $startProj -Verbose
+Update-Database -StartupProject $startProj
+
+Update the Department Edit view
 
 ## 9 of 10
 [Inheritance](https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/inheritance)
