@@ -16,7 +16,7 @@ namespace ContosoUniversity.Controllers
 
         public DepartmentsController(SchoolContext context)
         {
-            _context = context;    
+            _context = context;
         }
 
         // GET: Departments
@@ -27,7 +27,25 @@ namespace ContosoUniversity.Controllers
         }
 
         // GET: Departments/Details/5
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
 
+            var department = await _context.Departments
+                .Include(d => d.Administrator)
+                .AsNoTracking()
+                .SingleOrDefaultAsync(m => m.DepartmentID == id);
+
+            if (department == null)
+            {
+                return NotFound();
+            }
+
+            return View(department);
+        }
 
         /// <summary>
         /// Deletes the specified record by its Id value unless there is a concurrency error.
