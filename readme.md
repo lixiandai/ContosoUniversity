@@ -95,7 +95,7 @@ Update-Database -StartupProject $startProj
 ## 7 of 10
 [Updating related data](https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/update-related-data)
 
-## 8 of 10 (in progress)
+## 8 of 10
 [Handling concurrency conflicts](https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/concurrency)
 
 Add a tracking property to the Department entity
@@ -103,12 +103,19 @@ $startProj = 'ContosoUniversity'
 Add-Migration RowVersion -StartupProject $startProj -Verbose
 Update-Database -StartupProject $startProj
 
-Update Details and Create views
-
 ## 9 of 10
 [Inheritance](https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/inheritance)
 
-## 10 of 10
+Create and customize migration code
+
+```powershell
+$startProj = 'ContosoUniversity'
+Add-Migration Inheritance -StartupProject $startProj -Verbose
+Update-Database -StartupProject $startProj -Verbose
+
+```
+
+## 10 of 10 (in progress)
 [Advanced EF.Core Topics](https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/advanced)
 
 ## EF.Core logging of SQL
