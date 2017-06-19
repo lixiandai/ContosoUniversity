@@ -2,6 +2,7 @@
 
 ## Download link to completed Tutorial
 https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-mvc/intro/samples/cu-final
+
 ## Changes I made
 
 ### Azure SQL Server instead of LocalDB
@@ -91,8 +92,9 @@ Update-Database -StartupProject $startProj
 ## 6 of 10
 [Reading related data](https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/read-related-data)
 
-## 7 of 10
+## 7 of 10 (in progress)
 [Updating related data](https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/update-related-data)
+Add Course assignments to the Instructor Edit page
 
 ## 8 of 10
 [Handling concurrency conflicts](https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/concurrency)

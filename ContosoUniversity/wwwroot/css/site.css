@@ -35,3 +35,21 @@ textarea {
         display: none;
     }
 }
+
+/* START - Navbar branding overrides */
+.navbar-inverse {
+    background-color: royalblue;
+}
+
+.navbar-inverse .navbar-brand {
+    color: white;
+}
+
+.navbar-toggle > a {
+    color: white;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: white;
+}
+/* END - Navbar branding overrides */
