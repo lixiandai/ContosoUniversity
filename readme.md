@@ -94,7 +94,7 @@ Update-Database -StartupProject $startProj
 
 ## 7 of 10 (in progress)
 [Updating related data](https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/update-related-data)
-Update the Instructor views
+Add office location and courses to the Create page
 
 ## 8 of 10
 [Handling concurrency conflicts](https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/concurrency)
