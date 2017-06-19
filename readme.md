@@ -106,16 +106,17 @@ Update-Database -StartupProject $startProj
 ## 9 of 10
 [Inheritance](https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/inheritance)
 
-Create and customize migration code
+TPH is the only inheritance pattern that the Entity Framework Core supports. 
+What you'll do is create a Person class, change the Instructor and Student classes to derive from Person, 
+add the new class to the DbContext, and create a migration.
 
 ```powershell
 $startProj = 'ContosoUniversity'
 Add-Migration Inheritance -StartupProject $startProj -Verbose
 Update-Database -StartupProject $startProj -Verbose
-
 ```
 
-## 10 of 10 (in progress)
+## 10 of 10
 [Advanced EF.Core Topics](https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/advanced)
 
 ## EF.Core logging of SQL
