@@ -103,13 +103,16 @@ $startProj = 'ContosoUniversity'
 Add-Migration RowVersion -StartupProject $startProj -Verbose
 Update-Database -StartupProject $startProj
 
-Update the Department Edit view
+Update Details and Create views
 
 ## 9 of 10
 [Inheritance](https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/inheritance)
 
 ## 10 of 10
 [Advanced EF.Core Topics](https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/advanced)
+
+## EF.Core logging of SQL
+https://docs.microsoft.com/en-us/ef/core/miscellaneous/logging
 
 ## Multiple Developers using EF.Core and Migrations
 https://msdn.microsoft.com/en-us/data/dn481501

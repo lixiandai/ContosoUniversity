@@ -41,5 +41,11 @@ namespace ContosoUniversity.Data
             modelBuilder.Entity<CourseAssignment>()
                 .HasKey(c => new { c.CourseID, c.InstructorID });
         }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            base.OnConfiguring(optionsBuilder);
+            //TODO: optionsBuilder.UseLoggerFactory(_loggerFactory);
+        }
     }
 }
