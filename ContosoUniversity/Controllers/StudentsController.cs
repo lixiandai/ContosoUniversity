@@ -7,14 +7,9 @@ using ContosoUniversity.Models;
 
 namespace ContosoUniversity.Controllers
 {
-    public class StudentsController : Controller
+    public class StudentsController : BaseController
     {
-        private readonly SchoolContext _context;
-
-        public StudentsController(SchoolContext context)
-        {
-            _context = context;    
-        }
+        public StudentsController(SchoolContext context) : base(context){}
 
         public async Task<IActionResult> Index(
             string sortOrder,

@@ -5,16 +5,24 @@ using Microsoft.EntityFrameworkCore;
 using ContosoUniversity.Data;
 using ContosoUniversity.Models.SchoolViewModels;
 using System.Data.Common;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+
+using Microsoft.Extensions.Logging;
 
 namespace ContosoUniversity.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
-        private readonly SchoolContext _context;
-
-        public HomeController(SchoolContext context)
+        public HomeController(SchoolContext context) : base(context)
         {
-            _context = context;
+            //var serviceProvider = context.GetInfrastructure<IServiceProvider>();
+            //var loggerFactory = serviceProvider.GetService<ILoggerFactory>();
+            /*            using (var db = new SchoolContext())
+                        {
+                            var serviceProvider = db.GetInfrastructure<IServiceProvider>();
+                            var loggerFactory = serviceProvider.GetService<ILoggerFactory>();
+                            loggerFactory.AddProvider(new MyLoggerProvider());
+                        }*/
         }
 
         public IActionResult Index()

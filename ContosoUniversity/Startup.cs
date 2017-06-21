@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using ContosoUniversity.Data;
+using ContosoUniversity.Logging;
 
 namespace ContosoUniversity
 {
@@ -38,6 +39,7 @@ namespace ContosoUniversity
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
+            loggerFactory.AddProvider(new CustomLoggerProvider());
 
             if (env.IsDevelopment())
             {

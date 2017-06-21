@@ -10,13 +10,12 @@ using ContosoUniversity.Models;
 
 namespace ContosoUniversity.Controllers
 {
-    public class DepartmentsController : Controller
+    public class DepartmentsController : BaseController
     {
-        private readonly SchoolContext _context;
+        //private readonly SchoolContext _context;
 
-        public DepartmentsController(SchoolContext context)
+        public DepartmentsController(SchoolContext context) : base(context)
         {
-            _context = context;
         }
 
         // GET: Departments

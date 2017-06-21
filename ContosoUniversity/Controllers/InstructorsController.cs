@@ -10,14 +10,9 @@ using System;
 
 namespace ContosoUniversity.Controllers
 {
-    public class InstructorsController : Controller
+    public class InstructorsController : BaseController
     {
-        private readonly SchoolContext _context;
-
-        public InstructorsController(SchoolContext context)
-        {
-            _context = context;
-        }
+        public InstructorsController(SchoolContext context) : base(context){}
 
         // GET: Instructors
         public async Task<IActionResult> Index(int? id, int? courseID)
