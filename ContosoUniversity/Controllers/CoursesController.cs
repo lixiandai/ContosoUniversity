@@ -12,8 +12,6 @@ namespace ContosoUniversity.Controllers
 {
     public class CoursesController : BaseController
     {
-        //private readonly SchoolContext _context;
-
         public CoursesController(SchoolContext context) : base(context)
         {
         }
